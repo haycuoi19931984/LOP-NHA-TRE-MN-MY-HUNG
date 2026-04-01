@@ -8,7 +8,7 @@
 <style>
 body {
     margin:0;
-    font-family: 'Arial Rounded MT Bold', Arial;
+    font-family: Arial;
     background:#fff7fb;
 }
 
@@ -18,14 +18,12 @@ body {
     background:url("picture1a.png") center/cover no-repeat;
     position:relative;
 }
-
 .hero::after {
     content:"";
     position:absolute;
     inset:0;
     background:rgba(255,105,135,0.4);
 }
-
 .hero-text {
     position:absolute;
     top:50%;
@@ -37,20 +35,9 @@ body {
 }
 
 /* SECTION */
-.section {
-    padding:20px;
-}
-
-.title {
-    text-align:center;
-    color:#ff6f91;
-}
-
-.desc {
-    text-align:center;
-    font-size:14px;
-    margin-bottom:10px;
-}
+.section { padding:20px; }
+.title { text-align:center; color:#ff6f91; }
+.desc { text-align:center; font-size:14px; }
 
 /* GRID */
 .grid {
@@ -67,13 +54,11 @@ body {
     box-shadow:0 5px 10px rgba(0,0,0,0.1);
     cursor:pointer;
 }
-
 .thumbnail {
     width:100%;
     aspect-ratio:16/9;
     object-fit:cover;
 }
-
 .card p {
     text-align:center;
     padding:8px;
@@ -91,7 +76,7 @@ body {
     margin:5px;
 }
 
-/* VIDEO POPUP */
+/* VIDEO MODAL */
 .modal {
     display:none;
     position:fixed;
@@ -100,13 +85,11 @@ body {
     justify-content:center;
     align-items:center;
 }
-
 .modal iframe {
     width:90%;
     height:50%;
 }
 
-/* FOOTER */
 .footer {
     text-align:center;
     padding:20px;
@@ -120,20 +103,19 @@ body {
 <div class="hero">
 <div class="hero-text">
 <h2>Lớp Nhà trẻ 24-36 tháng</h2>
-<p>Nơi cất cánh những em bé hạnh phúc 🌈</p>
+<p>Nơi ươm mầm những em bé hạnh phúc 🌈</p>
 </div>
 </div>
 
 <!-- THƠ TRUYỆN -->
 <div class="section">
 <h3 class="title">📖 Thơ truyện</h3>
-<p class="desc">Học liệu giúp bé phát triển khả năng nghe - hiểu</p>
+<p class="desc">Phát triển ngôn ngữ cho bé</p>
 
 <div class="grid">
-
 <div class="card" onclick="play('gC-z-z3rzt4')">
 <img class="thumbnail" src="https://img.youtube.com/vi/gC-z-z3rzt4/hqdefault.jpg">
-<p>Mùa xuân đã về</p>
+<p>Mùa xuân</p>
 </div>
 
 <div class="card" onclick="play('z13QgT3YMSM')">
@@ -143,7 +125,7 @@ body {
 
 <div class="card" onclick="play('aQ3pcr39IHU')">
 <img class="thumbnail" src="https://img.youtube.com/vi/aQ3pcr39IHU/hqdefault.jpg">
-<p>Cháu chào ông ạ</p>
+<p>Cháu chào ông</p>
 </div>
 
 <div class="card" onclick="play('JjxHA1bwaac')">
@@ -155,7 +137,6 @@ body {
 <img class="thumbnail" src="https://img.youtube.com/vi/6hr1xaMlRjc/hqdefault.jpg">
 <p>Quả thị</p>
 </div>
-
 </div>
 </div>
 
@@ -164,7 +145,6 @@ body {
 <h3 class="title">🎨 Chơi mà học</h3>
 
 <div class="grid">
-
 <div class="card" onclick="play('hZ0Dvj_qV60')">
 <img class="thumbnail" src="https://img.youtube.com/vi/hZ0Dvj_qV60/hqdefault.jpg">
 <p>Vẽ tia nắng</p>
@@ -184,74 +164,41 @@ body {
 <img class="thumbnail" src="https://img.youtube.com/vi/yMhECbNn0Ts/hqdefault.jpg">
 <p>Ném bóng</p>
 </div>
-
 </div>
 
 <!-- TRÒ CHƠI -->
+<h3 class="title">🎮 Trò chơi</h3>
+
 <div class="grid">
 
 <a class="card" href="https://www.tinytap.com/activities/g63vz/play/game-ghép-hình-câu-chuyện-chú-gấu-ngoan-ngoãn" target="_blank">
-<img class="thumbnail" src="https://via.placeholder.com/400x225">
-<p>Ghép hình</p>
+<img class="thumbnail" src="gauu.png">
+<p>Chú gấu ngoan</p>
 </a>
 
-<a class="card" href="https://www.tinytap.com/activities/g63fm/play/trò-chơi-tìm-chính-xác-bạn-lớp-2b" target="_blank">
-<img class="thumbnail" src="https://via.placeholder.com/400x225">
+<a class="card" href="https://www.tinytap.com/activities/g63fm/play/tr%C3%B2-ch%C6%A1i-t%C3%ACm-ch%C3%ADnh-x%C3%A1c-b%E1%BA%A1n-l%E1%BB%9Bp-2b" target="_blank">
+<img class="thumbnail" src="timban.png">
 <p>Tìm bạn</p>
 </a>
 
-</div>
-</div>
+<a class="card" href="https://www.tinytap.com/activities/g64h4/play/c%C3%A1o-trong-truy%E1%BB%87n-%C4%91%C3%B4i-ban-t%E1%BB%91t" target="_blank">
+<img class="thumbnail" src="cao.png">
+<p>Cáo và bạn</p>
+</a>
 
-<!-- KỸ NĂNG -->
-<div class="section">
-<h3 class="title">🧠 Kỹ năng sống</h3>
-
-<div class="grid">
-
-<div class="card" onclick="play('qA2HMDbQSVQ')">
-<img class="thumbnail" src="https://img.youtube.com/vi/qA2HMDbQSVQ/hqdefault.jpg">
-<p>Phòng tránh đuối nước</p>
-</div>
-
-<div class="card" onclick="play('kakMYtuwkPg')">
-<img class="thumbnail" src="https://img.youtube.com/vi/kakMYtuwkPg/hqdefault.jpg">
-<p>Lịch sự ăn uống</p>
-</div>
-
-<div class="card" onclick="play('fnN87XEiPG4')">
-<img class="thumbnail" src="https://img.youtube.com/vi/fnN87XEiPG4/hqdefault.jpg">
-<p>Cầm cốc</p>
-</div>
-
-</div>
-</div>
-
-<!-- PHỤ HUYNH -->
-<div class="section">
-<h3 class="title">👨‍👩‍👧 Phụ huynh</h3>
-
-<div class="grid">
-
-<div class="card" onclick="play('B1MI60uvfZ8')">
-<img class="thumbnail" src="https://img.youtube.com/vi/B1MI60uvfZ8/hqdefault.jpg">
-<p>Chăm sóc trẻ</p>
-</div>
-
-<div class="card" onclick="play('OhwHb0u6zeY')">
-<img class="thumbnail" src="https://img.youtube.com/vi/OhwHb0u6zeY/hqdefault.jpg">
-<p>Phòng bệnh</p>
-</div>
+<a class="card" href="https://www.tinytap.com/activities/draft/?userJwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhEaGJhdFU5eXQ5MyJ9.eyJ1c2VySWQiOiIxMzIwODkwMCIsInRva2VuIjoiMVB2Q25PN3Y2dFhtMUhIdnhQSnRCWEhEbXpaN0FhT3JSR09wdnZjeSIsImlhdCI6MTc3NTAyMTM1Mn0.fc8dkjZLO725fZrAdHfGw6PBSXzTO0g0rScpVvs9Zpk&gameId=4db61bd0-1f49-11f1-a184-8d673f5bbb9d" target="_blank">
+<img class="thumbnail" src="ghep.png">
+<p>Ghép hình</p>
+</a>
 
 </div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-<h3>Lớp Nhà trẻ 24-36 tháng</h3>
-<p>Cô Trần Thuỳ Dung - 0914 194 516</p>
-
-<a class="btn" href="https://zalo.me/0914194516">Liên hệ Zalo</a>
+<h3>Cô Trần Thuỳ Dung</h3>
+<p>📞 0914 194 516</p>
+<a class="btn" href="https://zalo.me/0914194516">Zalo</a>
 <a class="btn" href="tel:0914194516">Gọi điện</a>
 </div>
 
