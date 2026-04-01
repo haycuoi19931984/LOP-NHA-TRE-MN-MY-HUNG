@@ -8,24 +8,29 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #fffafc;
-    color: #333;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
 }
 
 /* HERO */
 .hero {
+    position: relative;
     text-align: center;
-    padding: 20px;
-    background: linear-gradient(to right, #ffd6e0, #d6f0ff);
+    color: white;
 }
 
 .hero img {
     width: 100%;
-    max-height: 300px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 20px;
-    margin-top: 15px;
+    filter: brightness(70%);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* SECTION */
@@ -33,32 +38,36 @@ body {
     padding: 20px;
 }
 
-h1, h2 {
+.title {
     text-align: center;
+    margin-bottom: 10px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
 /* CARD */
 .card {
     background: white;
     border-radius: 15px;
-    padding: 10px;
-    margin: 15px 0;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-/* VIDEO RESPONSIVE */
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
     overflow: hidden;
-    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-.video-container iframe {
-    position: absolute;
+/* VIDEO 16:9 */
+.thumbnail {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.card p {
+    padding: 10px;
+    font-weight: bold;
 }
 
 /* BUTTON */
@@ -67,19 +76,11 @@ h1, h2 {
     text-align: center;
     background: #ff8fab;
     color: white;
-    padding: 12px;
+    padding: 10px;
+    border-radius: 20px;
     margin: 10px auto;
-    border-radius: 25px;
     text-decoration: none;
-    width: 85%;
-    max-width: 320px;
-}
-
-/* FOOTER */
-.footer {
-    background: #ffe5ec;
-    text-align: center;
-    padding: 20px;
+    width: 200px;
 }
 </style>
 </head>
@@ -88,118 +89,83 @@ h1, h2 {
 
 <!-- HERO -->
 <div class="hero">
-    <h1>Lớp Nhà trẻ 24-36 tháng</h1>
-    <h2>Trường Mầm non Mỹ Hưng</h2>
-    <p>Nơi cất cánh những em bé hạnh phúc. Các học liệu được thiết kế theo chương trình GDMN.</p>
-
     <img src="https://drive.google.com/uc?export=view&id=16CAo7WW9TYNEAC1kkybdEzGIhl83sn75">
+    <div class="hero-text">
+        <h1>Lớp Nhà trẻ 24-36 tháng</h1>
+        <p>Nơi ươm mầm những em bé hạnh phúc</p>
+    </div>
 </div>
 
 <!-- THƠ TRUYỆN -->
 <div class="section">
-    <h2>📖 Thơ truyện</h2>
+    <h2 class="title">📖 Thơ Truyện</h2>
 
-    <div class="card">
-        <p>Mùa xuân đã về</p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/gC-z-z3rzt4"></iframe>
+    <div class="grid">
+        <div class="card">
+            <a href="https://youtu.be/gC-z-z3rzt4" target="_blank">
+                <img class="thumbnail" src="https://img.youtube.com/vi/gC-z-z3rzt4/hqdefault.jpg">
+            </a>
+            <p>Mùa xuân đã về</p>
         </div>
-    </div>
 
-    <div class="card">
-        <p>Cây táo</p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/z13QgT3YMSM"></iframe>
+        <div class="card">
+            <a href="https://youtu.be/z13QgT3YMSM" target="_blank">
+                <img class="thumbnail" src="https://img.youtube.com/vi/z13QgT3YMSM/hqdefault.jpg">
+            </a>
+            <p>Cây táo</p>
         </div>
-    </div>
 
-    <div class="card">
-        <p>Đôi bạn nhỏ</p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/JjxHA1bwaac"></iframe>
+        <div class="card">
+            <a href="https://youtu.be/JjxHA1bwaac" target="_blank">
+                <img class="thumbnail" src="https://img.youtube.com/vi/JjxHA1bwaac/hqdefault.jpg">
+            </a>
+            <p>Đôi bạn nhỏ</p>
         </div>
     </div>
 </div>
 
 <!-- CHƠI MÀ HỌC -->
 <div class="section">
-    <h2>🎨 Chơi mà học</h2>
+    <h2 class="title">🎨 Chơi mà học</h2>
 
-    <div class="card">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/hZ0Dvj_qV60"></iframe>
+    <div class="grid">
+        <div class="card">
+            <a href="https://youtu.be/hZ0Dvj_qV60" target="_blank">
+                <img class="thumbnail" src="https://img.youtube.com/vi/hZ0Dvj_qV60/hqdefault.jpg">
+            </a>
+            <p>Bé vẽ tia nắng</p>
         </div>
-    </div>
 
-    <div class="card">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/lvxziuP9W-s"></iframe>
+        <div class="card">
+            <a href="https://youtu.be/lvxziuP9W-s" target="_blank">
+                <img class="thumbnail" src="https://img.youtube.com/vi/lvxziuP9W-s/hqdefault.jpg">
+            </a>
+            <p>Tìm hiểu máy bay</p>
         </div>
-    </div>
 
-    <div class="card">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/dSuUTlMml9k"></iframe>
+        <div class="card">
+            <a href="https://youtu.be/dSuUTlMml9k" target="_blank">
+                <img class="thumbnail" src="https://img.youtube.com/vi/dSuUTlMml9k/hqdefault.jpg">
+            </a>
+            <p>Thể dục buổi sáng</p>
         </div>
-    </div>
 
-    <div class="card">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/yMhECbNn0Ts"></iframe>
+        <div class="card">
+            <a href="https://youtu.be/yMhECbNn0Ts" target="_blank">
+                <img class="thumbnail" src="https://img.youtube.com/vi/yMhECbNn0Ts/hqdefault.jpg">
+            </a>
+            <p>Ném bóng</p>
         </div>
-    </div>
-
-    <a class="button" href="https://www.tinytap.com/activities/g63vz/play/game-ghép-hình-câu-chuyện-chú-gấu-ngoan-ngoãn" target="_blank">
-        🎮 Trò chơi ghép hình
-    </a>
-
-    <a class="button" href="https://www.tinytap.com/activities/g63fm/play/trò-chơi-tìm-chính-xác-bạn-lớp" target="_blank">
-        🎯 Tìm bạn đúng
-    </a>
-
-    <a class="button" href="https://www.tinytap.com/activities/g64h4/play/c%C3%A1o-trong-truy%E1%BB%87n-%C4%91%C3%B4i-ban-t%E1%BB%91t" target="_blank">
-        🦊 Truyện Đôi bạn nhỏ
-    </a>
-</div>
-
-<!-- KỸ NĂNG -->
-<div class="section">
-    <h2>🧸 Kỹ năng sống</h2>
-
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/qA2HMDbQSVQ"></iframe>
-    </div>
-
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/kakMYtuwkPg"></iframe>
-    </div>
-
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/fnN87XEiPG4"></iframe>
-    </div>
-</div>
-
-<!-- PHỤ HUYNH -->
-<div class="section">
-    <h2>👨‍👩‍👧 Dành cho phụ huynh</h2>
-
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/B1MI60uvfZ8"></iframe>
-    </div>
-
-    <div class="card">
-        <iframe src="https://www.youtube.com/embed/OhwHb0u6zeY"></iframe>
     </div>
 </div>
 
 <!-- FOOTER -->
-<div class="footer">
-    <h3>Lớp Nhà trẻ 24-36 tháng</h3>
-    <p>Trường Mầm non Mỹ Hưng</p>
-    <p>Cô Trần Thuỳ Dung - 0914 194 516</p>
+<div class="section" style="text-align:center;">
+    <h3>Cô Trần Thuỳ Dung</h3>
+    <p>📞 0914 194 516</p>
 
-    <a class="button" href="https://zalo.me/0914194516">💬 Liên hệ Zalo</a>
-    <a class="button" href="tel:0914194516">📞 Gọi điện</a>
+    <a class="button" href="https://zalo.me/0914194516">Zalo</a>
+    <a class="button" href="tel:0914194516">Gọi điện</a>
 </div>
 
 </body>
