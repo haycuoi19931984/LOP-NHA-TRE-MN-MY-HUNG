@@ -8,8 +8,22 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     background: #f5f7fa;
+}
+
+/* MENU */
+.navbar {
+    background: #ff8fab;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* HERO */
@@ -21,7 +35,7 @@ body {
 
 .hero img {
     width: 100%;
-    height: 300px;
+    height: 320px;
     object-fit: cover;
     filter: brightness(70%);
 }
@@ -35,19 +49,20 @@ body {
 
 /* SECTION */
 .section {
-    padding: 20px;
+    padding: 25px;
 }
 
 .title {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 /* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    gap: 20px;
 }
 
 /* CARD */
@@ -55,37 +70,54 @@ body {
     background: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
-/* VIDEO 16:9 */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGE */
 .thumbnail {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
+    transition: 0.3s;
+}
+
+.card:hover .thumbnail {
+    transform: scale(1.05);
 }
 
 .card p {
     padding: 10px;
     font-weight: bold;
+    text-align: center;
 }
 
 /* BUTTON */
 .button {
-    display: block;
-    text-align: center;
+    display: inline-block;
     background: #ff8fab;
     color: white;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 20px;
-    margin: 10px auto;
+    margin: 5px;
     text-decoration: none;
-    width: 200px;
 }
 </style>
 </head>
 
 <body>
+
+<!-- MENU -->
+<div class="navbar">
+    <a href="#">Trang chủ</a>
+    <a href="#tho">Thơ truyện</a>
+    <a href="#choi">Chơi mà học</a>
+    <a href="#game">Trò chơi</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -97,10 +129,10 @@ body {
 </div>
 
 <!-- THƠ TRUYỆN -->
-<div class="section">
+<div class="section" id="tho">
     <h2 class="title">📖 Thơ Truyện</h2>
-
     <div class="grid">
+
         <div class="card">
             <a href="https://youtu.be/gC-z-z3rzt4" target="_blank">
                 <img class="thumbnail" src="https://img.youtube.com/vi/gC-z-z3rzt4/hqdefault.jpg">
@@ -121,14 +153,15 @@ body {
             </a>
             <p>Đôi bạn nhỏ</p>
         </div>
+
     </div>
 </div>
 
 <!-- CHƠI MÀ HỌC -->
-<div class="section">
+<div class="section" id="choi">
     <h2 class="title">🎨 Chơi mà học</h2>
-
     <div class="grid">
+
         <div class="card">
             <a href="https://youtu.be/hZ0Dvj_qV60" target="_blank">
                 <img class="thumbnail" src="https://img.youtube.com/vi/hZ0Dvj_qV60/hqdefault.jpg">
@@ -143,19 +176,28 @@ body {
             <p>Tìm hiểu máy bay</p>
         </div>
 
+    </div>
+</div>
+
+<!-- TRÒ CHƠI -->
+<div class="section" id="game">
+    <h2 class="title">🎮 Trò chơi</h2>
+    <div class="grid">
+
         <div class="card">
-            <a href="https://youtu.be/dSuUTlMml9k" target="_blank">
-                <img class="thumbnail" src="https://img.youtube.com/vi/dSuUTlMml9k/hqdefault.jpg">
+            <a href="#">
+                <img class="thumbnail" src="https://via.placeholder.com/400x225?text=Game+1">
             </a>
-            <p>Thể dục buổi sáng</p>
+            <p>Gương thần cảm xúc</p>
         </div>
 
         <div class="card">
-            <a href="https://youtu.be/yMhECbNn0Ts" target="_blank">
-                <img class="thumbnail" src="https://img.youtube.com/vi/yMhECbNn0Ts/hqdefault.jpg">
+            <a href="#">
+                <img class="thumbnail" src="https://via.placeholder.com/400x225?text=Game+2">
             </a>
-            <p>Ném bóng</p>
+            <p>Đoán con vật</p>
         </div>
+
     </div>
 </div>
 
