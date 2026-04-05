@@ -14,7 +14,6 @@ body {
     background: #fffafc;
 }
 
-/* ===== HERO ===== */
 header {
     background: linear-gradient(135deg, #ffd6e0, #c8f7ff);
     text-align: center;
@@ -28,14 +27,9 @@ header img {
     border-radius: 20px;
 }
 
-h1 {
-    color: #ff6b81;
-}
+h1 { color: #ff6b81; }
 
-/* ===== SECTION ===== */
-section {
-    padding: 40px 20px;
-}
+section { padding: 40px 20px; }
 
 .section-title {
     text-align: center;
@@ -43,12 +37,6 @@ section {
     color: #ff7aa2;
 }
 
-.desc {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* ===== VIDEO GRID ===== */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -62,6 +50,7 @@ section {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
+    text-align: center;
 }
 
 .card:hover {
@@ -72,28 +61,13 @@ section {
     width: 100%;
 }
 
-/* ===== GAME ===== */
-.game-card img {
-    border-radius: 10px;
+.card-title {
+    padding: 10px;
+    font-weight: 600;
+    color: #444;
 }
 
-/* ===== FOOTER ===== */
-footer {
-    background: #ffd6e0;
-    text-align: center;
-    padding: 30px;
-}
-
-.btn {
-    padding: 10px 20px;
-    background: #ff6b81;
-    color: white;
-    border-radius: 20px;
-    text-decoration: none;
-    margin: 10px;
-}
-
-/* ===== POPUP ===== */
+/* Popup */
 .modal {
     display: none;
     position: fixed;
@@ -123,7 +97,7 @@ footer {
     cursor: pointer;
 }
 
-/* ===== ANIMATION ===== */
+/* Animation */
 .fade {
     opacity: 0;
     transform: translateY(40px);
@@ -133,6 +107,21 @@ footer {
 .fade.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+footer {
+    background: #ffd6e0;
+    text-align: center;
+    padding: 30px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #ff6b81;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    margin: 10px;
 }
 </style>
 </head>
@@ -145,81 +134,64 @@ footer {
     <img src="picture1a.png">
 </header>
 
-<!-- ===== SECTION TEMPLATE ===== -->
+<!-- THƠ TRUYỆN -->
 <section class="fade">
     <div class="section-title">🌼 Thơ truyện</div>
     <div class="grid">
 
         <div class="card" onclick="openVideo('gC-z-z3rzt4')">
             <img src="https://img.youtube.com/vi/gC-z-z3rzt4/0.jpg">
+            <div class="card-title">Mùa xuân đã về</div>
         </div>
 
         <div class="card" onclick="openVideo('z13QgT3YMSM')">
             <img src="https://img.youtube.com/vi/z13QgT3YMSM/0.jpg">
+            <div class="card-title">Kịch rối bóng Cây táo</div>
         </div>
 
         <div class="card" onclick="openVideo('aQ3pcr39IHU')">
             <img src="https://img.youtube.com/vi/aQ3pcr39IHU/0.jpg">
+            <div class="card-title">Cháu chào ông ạ</div>
         </div>
 
         <div class="card" onclick="openVideo('JjxHA1bwaac')">
             <img src="https://img.youtube.com/vi/JjxHA1bwaac/0.jpg">
+            <div class="card-title">Hoa kết trái</div>
         </div>
 
         <div class="card" onclick="openVideo('6hr1xaMlRjc')">
             <img src="https://img.youtube.com/vi/6hr1xaMlRjc/0.jpg">
+            <div class="card-title">Phim Quả thị</div>
         </div>
 
     </div>
 </section>
 
+<!-- CHƠI MÀ HỌC -->
 <section class="fade">
     <div class="section-title">🎨 Chơi mà học</div>
-
     <div class="grid">
+
         <div class="card" onclick="openVideo('hZ0Dvj_qV60')">
             <img src="https://img.youtube.com/vi/hZ0Dvj_qV60/0.jpg">
+            <div class="card-title">Vẽ tia nắng</div>
         </div>
 
         <div class="card" onclick="openVideo('lvxziuP9W-s')">
             <img src="https://img.youtube.com/vi/lvxziuP9W-s/0.jpg">
+            <div class="card-title">Tìm hiểu máy bay</div>
         </div>
 
         <div class="card" onclick="openVideo('dSuUTlMml9k')">
             <img src="https://img.youtube.com/vi/dSuUTlMml9k/0.jpg">
+            <div class="card-title">Thể dục buổi sáng</div>
         </div>
 
         <div class="card" onclick="openVideo('yMhECbNn0Ts')">
             <img src="https://img.youtube.com/vi/yMhECbNn0Ts/0.jpg">
-        </div>
-    </div>
-
-    <h3 style="text-align:center;margin-top:30px;">🎮 Trò chơi</h3>
-
-    <div class="grid">
-        <div class="card game-card">
-            <a href="https://www.tinytap.com/activities/g63vz/play/game-ghép-hình-câu-chuyện-chú-gấu-ngoan-ngoãn">
-                <img src="gauu.png">
-            </a>
+            <div class="card-title">Ném bóng</div>
         </div>
 
-        <div class="card game-card">
-            <a href="https://www.tinytap.com/activities/g63fm/play/trò-chơi-tìm-chính-xác-bạn-lớp-2b">
-                <img src="timban.png">
-            </a>
-        </div>
-
-        <div class="card game-card">
-            <a href="https://www.tinytap.com/activities/g64h4/play">
-                <img src="cao.png">
-            </a>
-        </div>
-
-        <div class="card game-card">
-            <a href="#">
-                <img src="ghep.png">
-            </a>
-        </div>
     </div>
 </section>
 
@@ -229,7 +201,7 @@ footer {
     <a class="btn" href="tel:0914194516">Gọi điện</a>
 </footer>
 
-<!-- ===== POPUP VIDEO ===== -->
+<!-- POPUP -->
 <div id="videoModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeVideo()">×</span>
@@ -238,7 +210,6 @@ footer {
 </div>
 
 <script>
-// ===== POPUP =====
 function openVideo(id){
     document.getElementById("videoModal").style.display = "block";
     document.getElementById("videoFrame").src = "https://www.youtube.com/embed/" + id;
@@ -249,13 +220,11 @@ function closeVideo(){
     document.getElementById("videoFrame").src = "";
 }
 
-// ===== ANIMATION SCROLL =====
-const faders = document.querySelectorAll('.fade');
-
+// animation
+const items = document.querySelectorAll('.fade');
 window.addEventListener('scroll', () => {
-    faders.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 100){
+    items.forEach(el => {
+        if(el.getBoundingClientRect().top < window.innerHeight - 100){
             el.classList.add('show');
         }
     });
