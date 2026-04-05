@@ -3,258 +3,263 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mầm non Mỹ Hưng</title>
+<title>Lớp Nhà trẻ 24-36 tháng</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
-    margin:0;
-    font-family: Arial;
-    background:#fff7fb;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    background: #fffafc;
 }
 
-/* HERO */
-.hero {
-    height:350px;
-    background:url("picture1a.png") center/cover no-repeat;
-    position:relative;
-}
-.hero::after {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(255,105,135,0.4);
-}
-.hero-text {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-    color:white;
-    z-index:2;
+/* ===== HERO ===== */
+header {
+    background: linear-gradient(135deg, #ffd6e0, #c8f7ff);
+    text-align: center;
+    padding: 40px 20px;
 }
 
-/* SECTION */
-.section { padding:20px; }
-.title { text-align:center; color:#ff6f91; }
-.desc { text-align:center; font-size:14px; }
+header img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+}
 
-/* GRID */
+h1 {
+    color: #ff6b81;
+}
+
+/* ===== SECTION ===== */
+section {
+    padding: 40px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    color: #ff7aa2;
+}
+
+.desc {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ===== VIDEO GRID ===== */
 .grid {
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-    gap:15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
 }
 
-/* CARD */
 .card {
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 5px 10px rgba(0,0,0,0.1);
-    cursor:pointer;
-}
-.thumbnail {
-    width:100%;
-    aspect-ratio:16/9;
-    object-fit:cover;
-}
-.card p {
-    text-align:center;
-    padding:8px;
-    font-size:13px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
-/* BUTTON */
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.card img {
+    width: 100%;
+}
+
+/* ===== GAME ===== */
+.game-card img {
+    border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #ffd6e0;
+    text-align: center;
+    padding: 30px;
+}
+
 .btn {
-    display:inline-block;
-    background:#ff8fab;
-    color:white;
-    padding:10px 15px;
-    border-radius:20px;
-    text-decoration:none;
-    margin:5px;
+    padding: 10px 20px;
+    background: #ff6b81;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    margin: 10px;
 }
 
-/* VIDEO MODAL */
+/* ===== POPUP ===== */
 .modal {
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.8);
-    justify-content:center;
-    align-items:center;
-}
-.modal iframe {
-    width:90%;
-    height:50%;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
 }
 
-.footer {
-    text-align:center;
-    padding:20px;
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    width: 80%;
+}
+
+.modal iframe {
+    width: 100%;
+    height: 500px;
+}
+
+.close {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ===== ANIMATION ===== */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-<div class="hero-text">
-<h2>Lớp Nhà trẻ 24-36 tháng - Trường Mầm non Mỹ Hưng</h2>
-<p>Nơi cất cánh những em bé hạnh phúc 🌈</p>
-</div>
-</div>
+<header>
+    <h1>Lớp Nhà trẻ 24-36 tháng - Trường Mầm non Mỹ Hưng</h1>
+    <p>Nơi cất cánh những em bé hạnh phúc</p>
+    <img src="picture1a.png">
+</header>
 
-<!-- THƠ TRUYỆN -->
-<div class="section">
-<h3 class="title">📖 Thơ truyện</h3>
-<p class="desc">Học liệu giúp bé phát triển khả năng nghe - hiểu</p>
+<!-- ===== SECTION TEMPLATE ===== -->
+<section class="fade">
+    <div class="section-title">🌼 Thơ truyện</div>
+    <div class="grid">
 
-<div class="grid">
-<div class="card" onclick="play('gC-z-z3rzt4')">
-<img class="thumbnail" src="https://img.youtube.com/vi/gC-z-z3rzt4/hqdefault.jpg">
-<p>Mùa xuân</p>
-</div>
+        <div class="card" onclick="openVideo('gC-z-z3rzt4')">
+            <img src="https://img.youtube.com/vi/gC-z-z3rzt4/0.jpg">
+        </div>
 
-<div class="card" onclick="play('z13QgT3YMSM')">
-<img class="thumbnail" src="https://img.youtube.com/vi/z13QgT3YMSM/hqdefault.jpg">
-<p>Cây táo</p>
-</div>
+        <div class="card" onclick="openVideo('z13QgT3YMSM')">
+            <img src="https://img.youtube.com/vi/z13QgT3YMSM/0.jpg">
+        </div>
 
-<div class="card" onclick="play('aQ3pcr39IHU')">
-<img class="thumbnail" src="https://img.youtube.com/vi/aQ3pcr39IHU/hqdefault.jpg">
-<p>Cháu chào ông</p>
-</div>
+        <div class="card" onclick="openVideo('aQ3pcr39IHU')">
+            <img src="https://img.youtube.com/vi/aQ3pcr39IHU/0.jpg">
+        </div>
 
-<div class="card" onclick="play('JjxHA1bwaac')">
-<img class="thumbnail" src="https://img.youtube.com/vi/JjxHA1bwaac/hqdefault.jpg">
-<p>Hoa kết trái</p>
-</div>
+        <div class="card" onclick="openVideo('JjxHA1bwaac')">
+            <img src="https://img.youtube.com/vi/JjxHA1bwaac/0.jpg">
+        </div>
 
-<div class="card" onclick="play('6hr1xaMlRjc')">
-<img class="thumbnail" src="https://img.youtube.com/vi/6hr1xaMlRjc/hqdefault.jpg">
-<p>Quả thị</p>
-</div>
-</div>
-</div>
+        <div class="card" onclick="openVideo('6hr1xaMlRjc')">
+            <img src="https://img.youtube.com/vi/6hr1xaMlRjc/0.jpg">
+        </div>
 
-<!-- CHƠI MÀ HỌC -->
-<div class="section">
-<h3 class="title">🎨 Chơi mà học</h3>
+    </div>
+</section>
 
-<div class="grid">
-<div class="card" onclick="play('hZ0Dvj_qV60')">
-<img class="thumbnail" src="https://img.youtube.com/vi/hZ0Dvj_qV60/hqdefault.jpg">
-<p>Vẽ tia nắng</p>
-</div>
+<section class="fade">
+    <div class="section-title">🎨 Chơi mà học</div>
 
-<div class="card" onclick="play('lvxziuP9W-s')">
-<img class="thumbnail" src="https://img.youtube.com/vi/lvxziuP9W-s/hqdefault.jpg">
-<p>Máy bay</p>
-</div>
+    <div class="grid">
+        <div class="card" onclick="openVideo('hZ0Dvj_qV60')">
+            <img src="https://img.youtube.com/vi/hZ0Dvj_qV60/0.jpg">
+        </div>
 
-<div class="card" onclick="play('dSuUTlMml9k')">
-<img class="thumbnail" src="https://img.youtube.com/vi/dSuUTlMml9k/hqdefault.jpg">
-<p>Thể dục</p>
-</div>
+        <div class="card" onclick="openVideo('lvxziuP9W-s')">
+            <img src="https://img.youtube.com/vi/lvxziuP9W-s/0.jpg">
+        </div>
 
-<div class="card" onclick="play('yMhECbNn0Ts')">
-<img class="thumbnail" src="https://img.youtube.com/vi/yMhECbNn0Ts/hqdefault.jpg">
-<p>Ném bóng</p>
-</div>
-</div>
+        <div class="card" onclick="openVideo('dSuUTlMml9k')">
+            <img src="https://img.youtube.com/vi/dSuUTlMml9k/0.jpg">
+        </div>
 
-<h3 class="title">🎮 Trò chơi</h3>
-<div class="grid">
+        <div class="card" onclick="openVideo('yMhECbNn0Ts')">
+            <img src="https://img.youtube.com/vi/yMhECbNn0Ts/0.jpg">
+        </div>
+    </div>
 
-<a class="card" href="https://www.tinytap.com/activities/g63vz/play/game-ghép-hình-câu-chuyện-chú-gấu-ngoan-ngoãn" target="_blank">
-<img class="thumbnail" src="gauu.png">
-<p>Chú gấu ngoan</p>
-</a>
+    <h3 style="text-align:center;margin-top:30px;">🎮 Trò chơi</h3>
 
-<a class="card" href="https://www.tinytap.com/activities/g63fm/play/tr%C3%B2-ch%C6%A1i-t%C3%ACm-ch%C3%ADnh-x%C3%A1c-b%E1%BA%A1n-l%E1%BB%9Bp-2b" target="_blank">
-<img class="thumbnail" src="timban.png">
-<p>Tìm bạn</p>
-</a>
+    <div class="grid">
+        <div class="card game-card">
+            <a href="https://www.tinytap.com/activities/g63vz/play/game-ghép-hình-câu-chuyện-chú-gấu-ngoan-ngoãn">
+                <img src="gauu.png">
+            </a>
+        </div>
 
-<a class="card" href="https://www.tinytap.com/activities/g64h4/play/c%C3%A1o-trong-truy%E1%BB%87n-%C4%91%C3%B4i-ban-t%E1%BB%91t" target="_blank">
-<img class="thumbnail" src="cao.png">
-<p>Cáo và bạn</p>
-</a>
+        <div class="card game-card">
+            <a href="https://www.tinytap.com/activities/g63fm/play/trò-chơi-tìm-chính-xác-bạn-lớp-2b">
+                <img src="timban.png">
+            </a>
+        </div>
 
-<a class="card" href="https://www.tinytap.com/activities/draft/?userJwt=..." target="_blank">
-<img class="thumbnail" src="ghep.png">
-<p>Ghép hình</p>
-</a>
+        <div class="card game-card">
+            <a href="https://www.tinytap.com/activities/g64h4/play">
+                <img src="cao.png">
+            </a>
+        </div>
 
-</div>
-</div>
+        <div class="card game-card">
+            <a href="#">
+                <img src="ghep.png">
+            </a>
+        </div>
+    </div>
+</section>
 
-<!-- KỸ NĂNG SỐNG -->
-<div class="section">
-<h3 class="title">🧠 Kỹ năng sống</h3>
-<p class="desc">Giúp bé tự lập trong cuộc sống</p>
+<footer>
+    <h3>Cô Trần Thuỳ Dung - 0914 194 516</h3>
+    <a class="btn" href="https://zalo.me/0914194516">Zalo</a>
+    <a class="btn" href="tel:0914194516">Gọi điện</a>
+</footer>
 
-<div class="grid">
-<div class="card" onclick="play('qA2HMDbQSVQ')">
-<img class="thumbnail" src="https://img.youtube.com/vi/qA2HMDbQSVQ/hqdefault.jpg">
-<p>Phòng tránh đuối nước</p>
-</div>
-
-<div class="card" onclick="play('kakMYtuwkPg')">
-<img class="thumbnail" src="https://img.youtube.com/vi/kakMYtuwkPg/hqdefault.jpg">
-<p>Lịch sự ăn uống</p>
-</div>
-
-<div class="card" onclick="play('fnN87XEiPG4')">
-<img class="thumbnail" src="https://img.youtube.com/vi/fnN87XEiPG4/hqdefault.jpg">
-<p>Cầm cốc</p>
-</div>
-</div>
-</div>
-
-<!-- TUYÊN TRUYỀN -->
-<div class="section">
-<h3 class="title">👨‍👩‍👧 Tuyên truyền phụ huynh</h3>
-
-<div class="grid">
-<div class="card" onclick="play('B1MI60uvfZ8')">
-<img class="thumbnail" src="https://img.youtube.com/vi/B1MI60uvfZ8/hqdefault.jpg">
-<p>Chăm sóc trẻ</p>
-</div>
-
-<div class="card" onclick="play('OhwHb0u6zeY')">
-<img class="thumbnail" src="https://img.youtube.com/vi/OhwHb0u6zeY/hqdefault.jpg">
-<p>Phòng bệnh</p>
-</div>
-</div>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-<h3>Lớp Nhà trẻ 24-36 tháng</h3>
-<p>Cô Trần Thuỳ Dung - 0914 194 516</p>
-
-<a class="btn" href="https://zalo.me/0914194516">Liên hệ Zalo</a>
-<a class="btn" href="tel:0914194516">Gọi điện</a>
-</div>
-
-<!-- VIDEO -->
-<div id="modal" class="modal" onclick="closeV()">
-<iframe id="frame" src="" frameborder="0" allowfullscreen></iframe>
+<!-- ===== POPUP VIDEO ===== -->
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeVideo()">×</span>
+        <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
 </div>
 
 <script>
-function play(id){
-document.getElementById("modal").style.display="flex";
-document.getElementById("frame").src="https://www.youtube.com/embed/"+id;
+// ===== POPUP =====
+function openVideo(id){
+    document.getElementById("videoModal").style.display = "block";
+    document.getElementById("videoFrame").src = "https://www.youtube.com/embed/" + id;
 }
-function closeV(){
-document.getElementById("modal").style.display="none";
-document.getElementById("frame").src="";
+
+function closeVideo(){
+    document.getElementById("videoModal").style.display = "none";
+    document.getElementById("videoFrame").src = "";
 }
+
+// ===== ANIMATION SCROLL =====
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+});
 </script>
 
 </body>
