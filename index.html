@@ -4,84 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lớp Nhà trẻ 24-36 tháng</title>
+<title>Lớp Nhà trẻ Mỹ Hưng</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-    font-family: 'Fredoka', sans-serif;
-    margin: 0;
-    background: #fffafc;
+body{
+    margin:0;
+    font-family:'Fredoka',sans-serif;
+    background:#fffafc;
 }
 
-/* ===== SLIDER ===== */
-.slider {
-    position: relative;
-    height: 420px;
-    overflow: hidden;
+/* ===== HERO ===== */
+.hero{
+    position:relative;
 }
 
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: 1s;
+.hero img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
 }
 
-.slide.active {
-    opacity: 1;
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:white;
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.hero-text h1{
+    font-size:32px;
 }
 
-/* TEXT */
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: white;
-    text-align: center;
+/* CHỮ CHẠY */
+.hero-text p{
+    font-size:18px;
+    color:#ffd6e7;
+    animation:slideText 3s infinite alternate;
 }
 
-.hero-text h1 {
-    font-size: 36px;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+@keyframes slideText{
+    from{transform:translateX(-10px);}
+    to{transform:translateX(10px);}
 }
 
-.hero-text p {
-    color: #ffd6e7;
-    font-size: 18px;
+/* ===== SECTION ===== */
+section{
+    padding:40px 20px;
 }
 
-/* BONG BÓNG */
-.bubble {
-    position: absolute;
-    bottom: -50px;
-    width: 20px;
-    height: 20px;
-    background: pink;
-    border-radius: 50%;
-    animation: float 6s infinite;
-}
-
-@keyframes float {
-    0% {transform: translateY(0);}
-    100% {transform: translateY(-600px);}
+.section-title{
+    text-align:center;
+    color:#ff4d8d;
+    font-size:24px;
 }
 
 /* GRID 4 */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 15px;
-    padding: 30px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
 @media(max-width:1000px){
@@ -89,47 +74,38 @@ body {
 }
 
 /* CARD */
-.card {
-    border-radius: 15px;
-    overflow: hidden;
-    background: white;
-    cursor: pointer;
-    transition: 0.3s;
-    position: relative;
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
 }
 
-.card:hover {
-    transform: scale(1.05);
+.card:hover{
+    transform:scale(1.05);
 }
 
-.card::after {
-    content:"▶";
-    position:absolute;
-    font-size:40px;
-    color:white;
-    top:40%;
-    left:45%;
-    opacity:0;
-}
-
-.card:hover::after {
-    opacity:1;
-}
-
-.card img {
+.card img{
     width:100%;
 }
 
 /* TITLE */
-.card-title {
+.card-title{
     text-align:center;
     color:#ff4d8d;
     padding:10px;
     background:#fff0f6;
 }
 
+/* GAME */
+.card a{
+    text-decoration:none;
+}
+
 /* POPUP */
-.modal {
+.modal{
     display:none;
     position:fixed;
     width:100%;
@@ -137,132 +113,211 @@ body {
     background:rgba(0,0,0,0.7);
 }
 
-.modal iframe {
+.modal iframe{
     width:80%;
     height:500px;
     margin:5% auto;
     display:block;
 }
 
-/* FLOAT BUTTON */
-.float-btn {
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    display:flex;
-    flex-direction:column;
-}
-
-.float-btn a {
-    margin:5px;
-    padding:10px;
-    background:#ff4d8d;
-    color:white;
-    border-radius:50%;
-    text-align:center;
-    text-decoration:none;
-}
-
 /* FOOTER */
-footer {
-    background:linear-gradient(#00bfa6,#6fe7dd);
+footer{
     text-align:center;
     padding:30px;
+    background:#00bfa6;
     color:white;
+}
+
+.btn{
+    background:white;
+    color:#ff4d8d;
+    padding:10px 15px;
+    border-radius:20px;
+    margin:5px;
+    display:inline-block;
+    text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- SLIDER -->
-<div class="slider">
-<div class="slide active"><img src="picture1a.png"></div>
-<div class="slide"><img src="picture1a.png"></div>
-
+<!-- HERO -->
+<div class="hero">
+<img src="picture1a.png">
 <div class="hero-text">
-<h1>Lớp Nhà trẻ 24-36 tháng</h1>
-<p>🌈 Nơi ươm mầm những em bé hạnh phúc</p>
+<h1>Lớp Nhà trẻ 24-36 tháng - Trường Mầm non Mỹ Hưng</h1>
+<p>Nơi cất cánh những em bé hạnh phúc</p>
+</div>
 </div>
 
-<!-- BONG BÓNG -->
-<div class="bubble" style="left:10%"></div>
-<div class="bubble" style="left:30%"></div>
-<div class="bubble" style="left:60%"></div>
-</div>
+<!-- THƠ TRUYỆN -->
+<section>
+<div class="section-title">🌼 Thơ truyện</div>
+<p style="text-align:center;">Học liệu giúp bé phát triển ngôn ngữ</p>
 
-<!-- VIDEO -->
 <div class="grid">
 
-<div class="card" onclick="playSound();openVideo('gC-z-z3rzt4')">
+<div class="card" onclick="openVideo('gC-z-z3rzt4')">
 <img src="https://img.youtube.com/vi/gC-z-z3rzt4/0.jpg">
-<div class="card-title">Mùa xuân đã về</div>
+<div class="card-title">Bạn Sóc Nâu kể chuyện Mùa xuân đã về</div>
 </div>
 
-<div class="card" onclick="playSound();openVideo('z13QgT3YMSM')">
+<div class="card" onclick="openVideo('z13QgT3YMSM')">
 <img src="https://img.youtube.com/vi/z13QgT3YMSM/0.jpg">
-<div class="card-title">Cây táo</div>
+<div class="card-title">Phim hoạt hình rối bóng câu chuyện Cây táo</div>
 </div>
 
-<div class="card" onclick="playSound();openVideo('aQ3pcr39IHU')">
+<div class="card" onclick="openVideo('aQ3pcr39IHU')">
 <img src="https://img.youtube.com/vi/aQ3pcr39IHU/0.jpg">
-<div class="card-title">Cháu chào ông</div>
+<div class="card-title">Bài thơi Cháu chào ông ạ</div>
 </div>
 
-<div class="card" onclick="playSound();openVideo('JjxHA1bwaac')">
+<div class="card" onclick="openVideo('JjxHA1bwaac')">
 <img src="https://img.youtube.com/vi/JjxHA1bwaac/0.jpg">
-<div class="card-title">Hoa kết trái</div>
+<div class="card-title">Bài thơ Hoa kết trái</div>
+</div>
+
+<div class="card" onclick="openVideo('6hr1xaMlRjc')">
+<img src="https://img.youtube.com/vi/6hr1xaMlRjc/0.jpg">
+<div class="card-title">Câu chuyện Quả thị</div>
 </div>
 
 </div>
+</section>
+
+<!-- CHƠI MÀ HỌC -->
+<section>
+<div class="section-title">🎨 Chơi mà học</div>
+
+<div class="grid">
+
+<div class="card" onclick="openVideo('hZ0Dvj_qV60')">
+<img src="https://img.youtube.com/vi/hZ0Dvj_qV60/0.jpg">
+<div class="card-title">Bé vẽ tia nắng mặt trời</div>
+</div>
+
+<div class="card" onclick="openVideo('lvxziuP9W-s')">
+<img src="https://img.youtube.com/vi/lvxziuP9W-s/0.jpg">
+<div class="card-title">Bé tìm hiểu về Máy bay</div>
+</div>
+
+<div class="card" onclick="openVideo('dSuUTlMml9k')">
+<img src="https://img.youtube.com/vi/dSuUTlMml9k/0.jpg">
+<div class="card-title">Thể dục sáng</div>
+</div>
+
+<div class="card" onclick="openVideo('yMhECbNn0Ts')">
+<img src="https://img.youtube.com/vi/yMhECbNn0Ts/0.jpg">
+<div class="card-title">Ném bóng trúng đích</div>
+</div>
+
+</div>
+
+<!-- TRÒ CHƠI -->
+<h3 style="text-align:center;color:#ff4d8d;">🎮 Trò chơi tương tác</h3>
+
+<div class="grid">
+
+<div class="card">
+<a href="https://www.tinytap.com/activities/g63vz/play" target="_blank">
+<img src="gauu.png">
+<div class="card-title">Ghép hình Chú gấu con ngoan</div>
+</a>
+</div>
+
+<div class="card">
+<a href="https://www.tinytap.com/activities/g63fm/play" target="_blank">
+<img src="timban.png">
+<div class="card-title">Tìm bạn lớp 2B</div>
+</a>
+</div>
+
+<div class="card">
+<a href="https://www.tinytap.com/activities/g64h4/play" target="_blank">
+<img src="cao.png">
+<div class="card-title">Câu chuyện Đôi bạn nhỏ</div>
+</a>
+</div>
+
+<div class="card">
+<a href="https://www.tinytap.com/activities/draft/?gameId=4db61bd0-1f49-11f1-a184-8d673f5bbb9d" target="_blank">
+<img src="ghep.png">
+<div class="card-title">Ghép hình</div>
+</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- KỸ NĂNG -->
+<section>
+<div class="section-title">🧠 Kỹ năng sống</div>
+
+<div class="grid">
+
+<div class="card" onclick="openVideo('qA2HMDbQSVQ')">
+<img src="https://img.youtube.com/vi/qA2HMDbQSVQ/0.jpg">
+<div class="card-title">Phòng tránh đuối nước</div>
+</div>
+
+<div class="card" onclick="openVideo('kakMYtuwkPg')">
+<img src="https://img.youtube.com/vi/kakMYtuwkPg/0.jpg">
+<div class="card-title">Phép lịch sự khi ăn uống</div>
+</div>
+
+<div class="card" onclick="openVideo('fnN87XEiPG4')">
+<img src="https://img.youtube.com/vi/fnN87XEiPG4/0.jpg">
+<div class="card-title">Cách cầm cốc uống nước</div>
+</div>
+
+</div>
+</section>
+
+<!-- TUYÊN TRUYỀN TỚI PHỤ HUYNH -->
+<section>
+<div class="section-title">👨‍👩‍👧 Tuyên truyền tới Phụ huynh</div>
+
+<div class="grid">
+
+<div class="card" onclick="openVideo('B1MI60uvfZ8')">
+<img src="https://img.youtube.com/vi/B1MI60uvfZ8/0.jpg">
+<div class="card-title">Chăm sóc trẻ và dinh dưỡng phù hợp lứa tuổi</div>
+</div>
+
+<div class="card" onclick="openVideo('OhwHb0u6zeY')">
+<img src="https://img.youtube.com/vi/OhwHb0u6zeY/0.jpg">
+<div class="card-title">Phòng bệnh mùa nắng nóng</div>
+</div>
+
+</div>
+</section>
 
 <!-- POPUP -->
 <div id="modal" class="modal" onclick="closeVideo()">
 <iframe id="frame"></iframe>
 </div>
 
-<!-- FLOAT BUTTON -->
-<div class="float-btn">
-<a href="tel:0914194516">📞</a>
-<a href="https://zalo.me/0914194516">💬</a>
-</div>
+<script>
+function openVideo(id){
+document.getElementById("modal").style.display="block";
+document.getElementById("frame").src="https://www.youtube.com/embed/"+id;
+}
+function closeVideo(){
+document.getElementById("modal").style.display="none";
+document.getElementById("frame").src="";
+}
+</script>
 
 <!-- FOOTER -->
 <footer>
 <h3>👩‍🏫 Cô Trần Thuỳ Dung</h3>
 <p>📞 0914 194 516</p>
-<p>Lớp Nhà trẻ 24-36 tháng - Trường Mầm non Mỹ Hưng</p>
+<a class="btn" href="tel:0914194516">Gọi điện</a>
+<a class="btn" href="https://zalo.me/0914194516">Zalo</a>
+<p>Lớp Nhà trẻ 24-36 tháng - Trường Mầm non Mỹ Hưng - tỉnh Ninh Bình</p>
 </footer>
-
-<!-- SOUND -->
-<audio id="sound">
-<source src="https://www.soundjay.com/buttons/sounds/button-16.mp3">
-</audio>
-
-<script>
-function playSound(){
-document.getElementById("sound").play();
-}
-
-function openVideo(id){
-document.getElementById("modal").style.display="block";
-document.getElementById("frame").src="https://www.youtube.com/embed/"+id;
-}
-
-function closeVideo(){
-document.getElementById("modal").style.display="none";
-document.getElementById("frame").src="";
-}
-
-/* SLIDER AUTO */
-let slides=document.querySelectorAll(".slide");
-let i=0;
-setInterval(()=>{
-slides[i].classList.remove("active");
-i=(i+1)%slides.length;
-slides[i].classList.add("active");
-},3000);
-</script>
 
 </body>
 </html>
