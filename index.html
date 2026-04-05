@@ -35,6 +35,7 @@ section { padding: 40px 20px; }
     text-align: center;
     font-size: 26px;
     color: #ff7aa2;
+    margin-bottom: 20px;
 }
 
 .grid {
@@ -51,10 +52,27 @@ section { padding: 40px 20px; }
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
     text-align: center;
+    position: relative;
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px) scale(1.03);
+}
+
+/* icon play */
+.card::after {
+    content: "▶";
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    top: 40%;
+    left: 45%;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card:hover::after {
+    opacity: 1;
 }
 
 .card img {
@@ -67,7 +85,7 @@ section { padding: 40px 20px; }
     color: #444;
 }
 
-/* Popup */
+/* popup */
 .modal {
     display: none;
     position: fixed;
@@ -97,7 +115,7 @@ section { padding: 40px 20px; }
     cursor: pointer;
 }
 
-/* Animation */
+/* animation */
 .fade {
     opacity: 0;
     transform: translateY(40px);
@@ -136,98 +154,138 @@ footer {
 
 <!-- THƠ TRUYỆN -->
 <section class="fade">
-    <div class="section-title">🌼 Thơ truyện</div>
-    <div class="grid">
+<div class="section-title">🌼 Thơ truyện</div>
+<div class="grid">
 
-        <div class="card" onclick="openVideo('gC-z-z3rzt4')">
-            <img src="https://img.youtube.com/vi/gC-z-z3rzt4/0.jpg">
-            <div class="card-title">Mùa xuân đã về</div>
-        </div>
+<div class="card" onclick="openVideo('gC-z-z3rzt4')">
+<img src="https://img.youtube.com/vi/gC-z-z3rzt4/0.jpg">
+<div class="card-title">Bạn Sóc Nâu - Mùa xuân đã về</div>
+</div>
 
-        <div class="card" onclick="openVideo('z13QgT3YMSM')">
-            <img src="https://img.youtube.com/vi/z13QgT3YMSM/0.jpg">
-            <div class="card-title">Kịch rối bóng Cây táo</div>
-        </div>
+<div class="card" onclick="openVideo('z13QgT3YMSM')">
+<img src="https://img.youtube.com/vi/z13QgT3YMSM/0.jpg">
+<div class="card-title">Kịch rối bóng Cây táo</div>
+</div>
 
-        <div class="card" onclick="openVideo('aQ3pcr39IHU')">
-            <img src="https://img.youtube.com/vi/aQ3pcr39IHU/0.jpg">
-            <div class="card-title">Cháu chào ông ạ</div>
-        </div>
+<div class="card" onclick="openVideo('aQ3pcr39IHU')">
+<img src="https://img.youtube.com/vi/aQ3pcr39IHU/0.jpg">
+<div class="card-title">Bài thơ Cháu chào ông ạ</div>
+</div>
 
-        <div class="card" onclick="openVideo('JjxHA1bwaac')">
-            <img src="https://img.youtube.com/vi/JjxHA1bwaac/0.jpg">
-            <div class="card-title">Hoa kết trái</div>
-        </div>
+<div class="card" onclick="openVideo('JjxHA1bwaac')">
+<img src="https://img.youtube.com/vi/JjxHA1bwaac/0.jpg">
+<div class="card-title">Bài thơ Hoa kết trái</div>
+</div>
 
-        <div class="card" onclick="openVideo('6hr1xaMlRjc')">
-            <img src="https://img.youtube.com/vi/6hr1xaMlRjc/0.jpg">
-            <div class="card-title">Phim Quả thị</div>
-        </div>
+<div class="card" onclick="openVideo('6hr1xaMlRjc')">
+<img src="https://img.youtube.com/vi/6hr1xaMlRjc/0.jpg">
+<div class="card-title">Phim hoạt hình Quả thị</div>
+</div>
 
-    </div>
+</div>
 </section>
 
 <!-- CHƠI MÀ HỌC -->
 <section class="fade">
-    <div class="section-title">🎨 Chơi mà học</div>
-    <div class="grid">
+<div class="section-title">🎨 Chơi mà học</div>
+<div class="grid">
 
-        <div class="card" onclick="openVideo('hZ0Dvj_qV60')">
-            <img src="https://img.youtube.com/vi/hZ0Dvj_qV60/0.jpg">
-            <div class="card-title">Vẽ tia nắng</div>
-        </div>
+<div class="card" onclick="openVideo('hZ0Dvj_qV60')">
+<img src="https://img.youtube.com/vi/hZ0Dvj_qV60/0.jpg">
+<div class="card-title">Bé vẽ tia nắng mặt trời</div>
+</div>
 
-        <div class="card" onclick="openVideo('lvxziuP9W-s')">
-            <img src="https://img.youtube.com/vi/lvxziuP9W-s/0.jpg">
-            <div class="card-title">Tìm hiểu máy bay</div>
-        </div>
+<div class="card" onclick="openVideo('lvxziuP9W-s')">
+<img src="https://img.youtube.com/vi/lvxziuP9W-s/0.jpg">
+<div class="card-title">Tìm hiểu chiếc máy bay</div>
+</div>
 
-        <div class="card" onclick="openVideo('dSuUTlMml9k')">
-            <img src="https://img.youtube.com/vi/dSuUTlMml9k/0.jpg">
-            <div class="card-title">Thể dục buổi sáng</div>
-        </div>
+<div class="card" onclick="openVideo('dSuUTlMml9k')">
+<img src="https://img.youtube.com/vi/dSuUTlMml9k/0.jpg">
+<div class="card-title">Thể dục buổi sáng với cành hoa</div>
+</div>
 
-        <div class="card" onclick="openVideo('yMhECbNn0Ts')">
-            <img src="https://img.youtube.com/vi/yMhECbNn0Ts/0.jpg">
-            <div class="card-title">Ném bóng</div>
-        </div>
+<div class="card" onclick="openVideo('yMhECbNn0Ts')">
+<img src="https://img.youtube.com/vi/yMhECbNn0Ts/0.jpg">
+<div class="card-title">Vận động ném bóng</div>
+</div>
 
-    </div>
+</div>
+</section>
+
+<!-- KỸ NĂNG SỐNG -->
+<section class="fade">
+<div class="section-title">🧠 Kỹ năng sống</div>
+<div class="grid">
+
+<div class="card" onclick="openVideo('qA2HMDbQSVQ')">
+<img src="https://img.youtube.com/vi/qA2HMDbQSVQ/0.jpg">
+<div class="card-title">Phòng tránh đuối nước</div>
+</div>
+
+<div class="card" onclick="openVideo('kakMYtuwkPg')">
+<img src="https://img.youtube.com/vi/kakMYtuwkPg/0.jpg">
+<div class="card-title">Phép lịch sự trong ăn uống</div>
+</div>
+
+<div class="card" onclick="openVideo('fnN87XEiPG4')">
+<img src="https://img.youtube.com/vi/fnN87XEiPG4/0.jpg">
+<div class="card-title">Cách cầm cốc uống nước</div>
+</div>
+
+</div>
+</section>
+
+<!-- PHỤ HUYNH -->
+<section class="fade">
+<div class="section-title">👨‍👩‍👧 Tuyên truyền phụ huynh</div>
+<div class="grid">
+
+<div class="card" onclick="openVideo('B1MI60uvfZ8')">
+<img src="https://img.youtube.com/vi/B1MI60uvfZ8/0.jpg">
+<div class="card-title">Chăm sóc trẻ tại nhà</div>
+</div>
+
+<div class="card" onclick="openVideo('OhwHb0u6zeY')">
+<img src="https://img.youtube.com/vi/OhwHb0u6zeY/0.jpg">
+<div class="card-title">Phòng tránh dịch mùa nóng</div>
+</div>
+
+</div>
 </section>
 
 <footer>
-    <h3>Cô Trần Thuỳ Dung - 0914 194 516</h3>
-    <a class="btn" href="https://zalo.me/0914194516">Zalo</a>
-    <a class="btn" href="tel:0914194516">Gọi điện</a>
+<h3>Cô Trần Thuỳ Dung - 0914 194 516</h3>
+<a class="btn" href="https://zalo.me/0914194516">Zalo</a>
+<a class="btn" href="tel:0914194516">Gọi điện</a>
 </footer>
 
 <!-- POPUP -->
 <div id="videoModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeVideo()">×</span>
-        <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
+<div class="modal-content">
+<span class="close" onclick="closeVideo()">×</span>
+<iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
 
 <script>
 function openVideo(id){
-    document.getElementById("videoModal").style.display = "block";
-    document.getElementById("videoFrame").src = "https://www.youtube.com/embed/" + id;
+document.getElementById("videoModal").style.display = "block";
+document.getElementById("videoFrame").src = "https://www.youtube.com/embed/" + id;
 }
 
 function closeVideo(){
-    document.getElementById("videoModal").style.display = "none";
-    document.getElementById("videoFrame").src = "";
+document.getElementById("videoModal").style.display = "none";
+document.getElementById("videoFrame").src = "";
 }
 
-// animation
 const items = document.querySelectorAll('.fade');
 window.addEventListener('scroll', () => {
-    items.forEach(el => {
-        if(el.getBoundingClientRect().top < window.innerHeight - 100){
-            el.classList.add('show');
-        }
-    });
+items.forEach(el => {
+if(el.getBoundingClientRect().top < window.innerHeight - 100){
+el.classList.add('show');
+}
+});
 });
 </script>
 
