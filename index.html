@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Lớp Nhà trẻ 24-36 tháng</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
@@ -11,152 +12,186 @@
 body {
     font-family: 'Fredoka', sans-serif;
     margin: 0;
-    background: linear-gradient(#fff0f6, #e6faff);
+    background: #fffafc;
 }
 
-/* HEADER */
-header {
-    text-align: center;
-    padding: 30px;
+/* ===== SLIDER ===== */
+.slider {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
 }
 
-header img {
+.slide {
+    position: absolute;
     width: 100%;
-    max-height: 300px;
-    border-radius: 20px;
+    height: 100%;
+    opacity: 0;
+    transition: 1s;
 }
 
-h1 {
-    color: #ff4d8d;
+.slide.active {
+    opacity: 1;
 }
 
-/* SECTION */
-section {
-    padding: 30px;
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.section-title {
+/* TEXT */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
     text-align: center;
-    font-size: 26px;
-    color: #ff4d8d;
-    margin-bottom: 20px;
 }
 
-/* GRID */
+.hero-text h1 {
+    font-size: 36px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.hero-text p {
+    color: #ffd6e7;
+    font-size: 18px;
+}
+
+/* BONG BÓNG */
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+    animation: float 6s infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-600px);}
+}
+
+/* GRID 4 */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    padding: 30px;
+}
+
+@media(max-width:1000px){
+.grid{grid-template-columns:repeat(2,1fr);}
 }
 
 /* CARD */
 .card {
-    background: white;
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
+    background: white;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
     position: relative;
 }
 
 .card:hover {
-    transform: scale(1.05) rotate(-1deg);
+    transform: scale(1.05);
 }
 
-/* RUNG */
-.card:active {
-    animation: shake 0.3s;
-}
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-3px); }
-    50% { transform: translateX(3px); }
-    75% { transform: translateX(-3px); }
-    100% { transform: translateX(0); }
-}
-
-/* ICON PLAY */
 .card::after {
-    content: "▶";
-    position: absolute;
-    font-size: 40px;
-    color: white;
-    top: 40%;
-    left: 45%;
-    opacity: 0;
-    transition: 0.3s;
+    content:"▶";
+    position:absolute;
+    font-size:40px;
+    color:white;
+    top:40%;
+    left:45%;
+    opacity:0;
 }
 
 .card:hover::after {
-    opacity: 1;
+    opacity:1;
 }
 
 .card img {
-    width: 100%;
+    width:100%;
 }
 
 /* TITLE */
 .card-title {
-    padding: 12px;
-    font-size: 16px;
-    color: #ff4d8d;
-    background: #fff0f6;
-    text-align: center;
+    text-align:center;
+    color:#ff4d8d;
+    padding:10px;
+    background:#fff0f6;
 }
 
 /* POPUP */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-    margin: 5% auto;
-    width: 80%;
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
 }
 
 .modal iframe {
-    width: 100%;
-    height: 500px;
+    width:80%;
+    height:500px;
+    margin:5% auto;
+    display:block;
 }
 
-.close {
-    font-size: 30px;
-    color: white;
-    float: right;
-    cursor: pointer;
+/* FLOAT BUTTON */
+.float-btn {
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    display:flex;
+    flex-direction:column;
 }
 
-/* BUTTON */
-.btn {
-    background: #ff4d8d;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    display: inline-block;
-    margin: 10px;
+.float-btn a {
+    margin:5px;
+    padding:10px;
+    background:#ff4d8d;
+    color:white;
+    border-radius:50%;
+    text-align:center;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer {
+    background:linear-gradient(#00bfa6,#6fe7dd);
+    text-align:center;
+    padding:30px;
+    color:white;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>Lớp Nhà trẻ 24-36 tháng</h1>
-<p>Nơi cất cánh những em bé hạnh phúc</p>
-<img src="picture1a.png">
-</header>
+<!-- SLIDER -->
+<div class="slider">
+<div class="slide active"><img src="picture1a.png"></div>
+<div class="slide"><img src="picture1a.png"></div>
 
-<!-- THƠ TRUYỆN -->
-<section>
-<div class="section-title">🌼 Thơ truyện</div>
+<div class="hero-text">
+<h1>Lớp Nhà trẻ 24-36 tháng</h1>
+<p>🌈 Nơi ươm mầm những em bé hạnh phúc</p>
+</div>
+
+<!-- BONG BÓNG -->
+<div class="bubble" style="left:10%"></div>
+<div class="bubble" style="left:30%"></div>
+<div class="bubble" style="left:60%"></div>
+</div>
+
+<!-- VIDEO -->
 <div class="grid">
 
 <div class="card" onclick="playSound();openVideo('gC-z-z3rzt4')">
@@ -169,77 +204,64 @@ section {
 <div class="card-title">Cây táo</div>
 </div>
 
+<div class="card" onclick="playSound();openVideo('aQ3pcr39IHU')">
+<img src="https://img.youtube.com/vi/aQ3pcr39IHU/0.jpg">
+<div class="card-title">Cháu chào ông</div>
 </div>
-</section>
 
-<!-- CHƠI MÀ HỌC -->
-<section>
-<div class="section-title">🎨 Chơi mà học</div>
-<div class="grid">
-
-<div class="card" onclick="playSound();openVideo('hZ0Dvj_qV60')">
-<img src="https://img.youtube.com/vi/hZ0Dvj_qV60/0.jpg">
-<div class="card-title">Vẽ tia nắng</div>
+<div class="card" onclick="playSound();openVideo('JjxHA1bwaac')">
+<img src="https://img.youtube.com/vi/JjxHA1bwaac/0.jpg">
+<div class="card-title">Hoa kết trái</div>
 </div>
 
 </div>
-</section>
-
-<!-- TRÒ CHƠI -->
-<section>
-<div class="section-title">🎮 Trò chơi</div>
-<div class="grid">
-
-<div class="card" onclick="playSound()">
-<a href="https://www.tinytap.com/activities/g63vz/play" target="_blank">
-<img src="gauu.png">
-<div class="card-title">Ghép hình chú gấu</div>
-</a>
-</div>
-
-<div class="card" onclick="playSound()">
-<a href="https://www.tinytap.com/activities/g63fm/play" target="_blank">
-<img src="timban.png">
-<div class="card-title">Tìm bạn lớp</div>
-</a>
-</div>
-
-</div>
-</section>
-
-<footer style="text-align:center;padding:20px;">
-<h3>Cô Trần Thuỳ Dung</h3>
-<a class="btn" href="tel:0914194516">Gọi điện</a>
-<a class="btn" href="https://zalo.me/0914194516">Zalo</a>
-</footer>
 
 <!-- POPUP -->
-<div id="videoModal" class="modal">
-<div class="modal-content">
-<span class="close" onclick="closeVideo()">×</span>
-<iframe id="videoFrame"></iframe>
-</div>
+<div id="modal" class="modal" onclick="closeVideo()">
+<iframe id="frame"></iframe>
 </div>
 
-<!-- ÂM THANH -->
-<audio id="clickSound">
-<source src="https://www.soundjay.com/buttons/sounds/button-16.mp3" type="audio/mpeg">
+<!-- FLOAT BUTTON -->
+<div class="float-btn">
+<a href="tel:0914194516">📞</a>
+<a href="https://zalo.me/0914194516">💬</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<h3>👩‍🏫 Cô Trần Thuỳ Dung</h3>
+<p>📞 0914 194 516</p>
+<p>Lớp Nhà trẻ 24-36 tháng - Trường Mầm non Mỹ Hưng</p>
+</footer>
+
+<!-- SOUND -->
+<audio id="sound">
+<source src="https://www.soundjay.com/buttons/sounds/button-16.mp3">
 </audio>
 
 <script>
 function playSound(){
-document.getElementById("clickSound").play();
+document.getElementById("sound").play();
 }
 
 function openVideo(id){
-document.getElementById("videoModal").style.display = "block";
-document.getElementById("videoFrame").src = "https://www.youtube.com/embed/" + id;
+document.getElementById("modal").style.display="block";
+document.getElementById("frame").src="https://www.youtube.com/embed/"+id;
 }
 
 function closeVideo(){
-document.getElementById("videoModal").style.display = "none";
-document.getElementById("videoFrame").src = "";
+document.getElementById("modal").style.display="none";
+document.getElementById("frame").src="";
 }
+
+/* SLIDER AUTO */
+let slides=document.querySelectorAll(".slide");
+let i=0;
+setInterval(()=>{
+slides[i].classList.remove("active");
+i=(i+1)%slides.length;
+slides[i].classList.add("active");
+},3000);
 </script>
 
 </body>
