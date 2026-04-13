@@ -4,51 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lớp Nhà trẻ Mỹ Hưng</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body{margin:0;font-family:'Fredoka',sans-serif;background:#fffafc}
 
-/* ===== HERO GIỮ NGUYÊN ===== */
+/* HERO */
 .hero{position:relative}
 .hero img{width:100%;height:420px;object-fit:cover}
 .hero-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:white}
-.hero-text h1{font-size:32px}
-.hero-text p{font-size:18px;color:#ffd6e7;animation:slideText 3s infinite alternate}
-@keyframes slideText{from{transform:translateX(-10px)}to{transform:translateX(10px)}}
+.hero-text p{animation:slide 3s infinite alternate}
+@keyframes slide{from{transform:translateX(-10px)}to{transform:translateX(10px)}}
 
-/* ===== SECTION ===== */
+/* SECTION */
 section{padding:40px 20px}
-.section-title{text-align:center;color:#ff4d8d;font-size:24px}
-
-/* ===== FILTER ===== */
-.filter{background:white;padding:15px;border-radius:15px;margin:20px auto;max-width:900px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
-select{padding:10px;border-radius:10px;margin:5px}
+.section-title{text-align:center;color:#ff4d8d;font-size:24px;margin-bottom:20px}
 
 /* GRID */
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 @media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
 
 /* CARD */
-.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:0.3s}
+.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);cursor:pointer}
 .card:hover{transform:scale(1.05)}
 .card img{width:100%}
 .card-title{text-align:center;color:#ff4d8d;padding:10px;background:#fff0f6}
-.card-desc{font-size:13px;padding:5px;text-align:center}
-
-/* TAG */
-.tag{font-size:11px;padding:3px 6px;margin:2px;border-radius:6px;display:inline-block}
-.topic{background:#ffe0b2}
-.skill{background:#bbdefb}
-.level{background:#c8e6c9}
+.card-info{text-align:center;font-size:13px;padding-bottom:10px}
 
 /* POPUP */
 .modal{display:none;position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.7)}
 .modal iframe{width:80%;height:500px;margin:5% auto;display:block}
 
-/* FOOTER GIỮ NGUYÊN */
+/* FOOTER */
 footer{text-align:center;padding:30px;background:#00bfa6;color:white}
-.btn{background:white;color:#ff4d8d;padding:10px 15px;border-radius:20px;margin:5px;display:inline-block;text-decoration:none}
+.btn{background:white;color:#ff4d8d;padding:10px 15px;border-radius:20px;margin:5px;text-decoration:none}
 </style>
 </head>
 
@@ -58,41 +48,76 @@ footer{text-align:center;padding:30px;background:#00bfa6;color:white}
 <div class="hero">
 <img src="picture1a.png">
 <div class="hero-text">
-<h1>Lớp Nhà trẻ 24-36 tháng - Trường Mầm non Mỹ Hưng</h1>
+<h1>Lớp Nhà trẻ 24-36 tháng</h1>
 <p>Nơi cất cánh những em bé hạnh phúc</p>
 </div>
 </div>
 
-<!-- ===== NGÂN HÀNG HỌC LIỆU ===== -->
+<!-- HÀM TẠO VIDEO -->
+<script>
+function videoCard(id,title,topic,level){
+return `
+<div class="card" onclick="openVideo('${id}')">
+<img src="https://img.youtube.com/vi/${id}/0.jpg">
+<div class="card-title">${title}</div>
+<div class="card-info">Chủ đề: ${topic} | Mức độ: ${level}</div>
+</div>`
+}
+function videoCardNoLevel(id,title){
+return `
+<div class="card" onclick="openVideo('${id}')">
+<img src="https://img.youtube.com/vi/${id}/0.jpg">
+<div class="card-title">${title}</div>
+</div>`
+}
+</script>
+
+<!-- GÓC THƠ TRUYỆN -->
 <section>
-<div class="section-title">📚 Ngân hàng học liệu</div>
+<div class="section-title">📖 Góc Thơ truyện</div>
+<div class="grid" id="tho"></div>
+</section>
 
-<div class="filter">
-<select id="topic">
-<option value="all">Chủ đề</option>
-<option value="nhanthuc">Nhận thức</option>
-<option value="ngonngu">Ngôn ngữ</option>
-<option value="kynang">Kỹ năng sống</option>
-<option value="amnhac">Âm nhạc</option>
-</select>
+<!-- GÓC CHƠI MÀ HỌC -->
+<section>
+<div class="section-title">🎨 Góc Chơi mà học</div>
+<div class="grid" id="choi"></div>
+</section>
 
-<select id="skill">
-<option value="all">Kỹ năng</option>
-<option value="nhanthuc">Nhận thức</option>
-<option value="ngonngu">Ngôn ngữ</option>
-<option value="vandong">Vận động</option>
-<option value="xahoi">Xã hội</option>
-</select>
+<!-- GÓC KỸ NĂNG -->
+<section>
+<div class="section-title">🧠 Góc Kỹ năng sống</div>
+<div class="grid" id="kynang"></div>
+</section>
 
-<select id="level">
-<option value="all">Mức độ</option>
-<option value="de">Dễ</option>
-<option value="tb">Trung bình</option>
-<option value="kho">Nâng cao</option>
-</select>
+<!-- TRÒ CHƠI -->
+<section>
+<div class="section-title">🎮 Trò chơi tương tác</div>
+<div class="grid">
+
+<a href="https://www.tinytap.com/activities/g63vz/play" target="_blank" class="card">
+<img src="gauu.png"><div class="card-title">Ghép hình chú gấu</div>
+</a>
+
+<a href="https://www.tinytap.com/activities/g63fm/play" target="_blank" class="card">
+<img src="timban.png"><div class="card-title">Tìm bạn lớp</div>
+</a>
+
+<a href="https://www.tinytap.com/activities/g64h4/play" target="_blank" class="card">
+<img src="cao.png"><div class="card-title">Đôi bạn nhỏ</div>
+</a>
+
+<a href="https://www.tinytap.com/activities/draft/?gameId=4db61bd0-1f49-11f1-a184-8d673f5bbb9d" target="_blank" class="card">
+<img src="ghep.png"><div class="card-title">Ghép hình</div>
+</a>
+
 </div>
+</section>
 
-<div class="grid" id="videoList"></div>
+<!-- TUYÊN TRUYỀN -->
+<section>
+<div class="section-title">👨‍👩‍👧 Góc Tuyên truyền</div>
+<div class="grid" id="ph"></div>
 </section>
 
 <!-- POPUP -->
@@ -101,53 +126,40 @@ footer{text-align:center;padding:30px;background:#00bfa6;color:white}
 </div>
 
 <script>
-const videos=[
-{id:'qv4_7QiWDsg',title:'Nhận thức cơ bản',desc:'Nhận biết sự vật',topic:'nhanthuc',skill:'nhanthuc',level:'de'},
-{id:'LUPsqgFvnqo',title:'Màu sắc',desc:'Nhận biết màu',topic:'nhanthuc',skill:'nhanthuc',level:'de'},
-{id:'g-2vmNxl5wQ',title:'Hình dạng',desc:'Nhận biết hình học',topic:'nhanthuc',skill:'nhanthuc',level:'tb'},
-{id:'fu32XsS4elU',title:'Kỹ năng sống',desc:'Hành vi đúng',topic:'kynang',skill:'xahoi',level:'tb'},
-{id:'EqTMVMslE5Y',title:'Âm nhạc',desc:'Cảm thụ âm nhạc',topic:'amnhac',skill:'ngonngu',level:'de'},
-{id:'Oku9tPqSDjA',title:'Kể chuyện',desc:'Phát triển ngôn ngữ',topic:'ngonngu',skill:'ngonngu',level:'tb'},
-{id:'k5mIJ8TY06w',title:'Khám phá',desc:'Thế giới xung quanh',topic:'nhanthuc',skill:'nhanthuc',level:'tb'},
-{id:'z5fwPqe8mIs',title:'Kỹ năng xã hội',desc:'Tương tác',topic:'kynang',skill:'xahoi',level:'tb'},
-{id:'prr2Bxcs048',title:'Thói quen',desc:'Rèn nề nếp',topic:'kynang',skill:'xahoi',level:'de'},
-{id:'dEMpVdsU44A',title:'Tư duy',desc:'Phát triển logic',topic:'nhanthuc',skill:'nhanthuc',level:'kho'},
-{id:'o6hy1GErG2E',title:'Vận động',desc:'Phát triển thể chất',topic:'kynang',skill:'vandong',level:'tb'},
-{id:'QUcD0f0I8h0',title:'An toàn',desc:'Kỹ năng an toàn',topic:'kynang',skill:'xahoi',level:'tb'},
-{id:'E0fYrZzm2Hk',title:'Thiên nhiên',desc:'Khám phá môi trường',topic:'nhanthuc',skill:'nhanthuc',level:'de'},
-{id:'JjxHA1bwaac',title:'Bài thơ',desc:'Phát triển ngôn ngữ',topic:'ngonngu',skill:'ngonngu',level:'tb'},
-{id:'aQ3pcr39IHU',title:'Gia đình',desc:'Tình cảm gia đình',topic:'kynang',skill:'xahoi',level:'de'},
-{id:'PBsENh0uMzE',title:'Âm nhạc',desc:'Học qua bài hát',topic:'amnhac',skill:'ngonngu',level:'de'},
-{id:'umVlxnnQMic',title:'Học chủ đề',desc:'Tiếp thu kiến thức',topic:'nhanthuc',skill:'nhanthuc',level:'tb'},
-{id:'6hr1xaMlRjc',title:'Vận động tinh',desc:'Kỹ năng tay',topic:'kynang',skill:'vandong',level:'tb'},
-{id:'z13QgT3YMSM',title:'Sáng tạo',desc:'Phát triển tư duy',topic:'nhanthuc',skill:'nhanthuc',level:'kho'},
-{id:'gC-z-z3rzt4',title:'Trò chơi',desc:'Học qua chơi',topic:'kynang',skill:'xahoi',level:'de'},
-{id:'dSuUTlMml9k',title:'Trải nghiệm',desc:'Học thực hành',topic:'kynang',skill:'vandong',level:'tb'},
-{id:'yMhECbNn0Ts',title:'Hoạt động lớp',desc:'Kết nối phụ huynh',topic:'kynang',skill:'xahoi',level:'de'}
-];
+document.getElementById("tho").innerHTML=
+videoCard("z13QgT3YMSM","Cây táo","Cây và hoa","Khó")+
+videoCard("JjxHA1bwaac","Hoa kết trái","Cây và hoa","Dễ")+
+videoCard("6hr1xaMlRjc","Quả thị","Cây và hoa","TB")+
+videoCard("aQ3pcr39IHU","Cháu chào ông","Gia đình","Dễ")+
+videoCard("gC-z-z3rzt4","Sóc nâu kể chuyện","Bé và bạn","Khó");
 
-function render(){
-const t=topic.value,s=skill.value,l=level.value;
-videoList.innerHTML='';
-videos.filter(v=>(t==='all'||v.topic===t)&&(s==='all'||v.skill===s)&&(l==='all'||v.level===l))
-.forEach(v=>{
-videoList.innerHTML+=`<div class="card" onclick="openVideo('${v.id}')">
-<img src="https://img.youtube.com/vi/${v.id}/0.jpg">
-<div class="card-title">${v.title}</div>
-<div class="card-desc">${v.desc}</div>
-<div style="text-align:center">
-<span class="tag topic">${v.topic}</span>
-<span class="tag skill">${v.skill}</span>
-<span class="tag level">${v.level}</span>
-</div></div>`
-})
+document.getElementById("choi").innerHTML=
+videoCard("LUPsqgFvnqo","Màu sắc","Bé và bạn","Dễ")+
+videoCard("g-2vmNxl5wQ","Hình dạng","Đồ chơi","TB")+
+videoCard("Oku9tPqSDjA","Máy bay","Giao thông","TB")+
+videoCard("qv4_7QiWDsg","Con vật","Động vật","Dễ")+
+videoCard("k5mIJ8TY06w","Khám phá","Động vật","TB")+
+videoCard("EqTMVMslE5Y","Mùa hè","Mùa hè","Dễ");
+
+document.getElementById("kynang").innerHTML=
+videoCard("z5fwPqe8mIs","Giao tiếp","Bé và bạn","TB")+
+videoCard("prr2Bxcs048","Thói quen","Gia đình","Dễ")+
+videoCard("fu32XsS4elU","Hành vi","Đồ chơi","TB")+
+videoCard("dSuUTlMml9k","Thể dục","Bé và bạn","TB")+
+videoCard("yMhECbNn0Ts","Ném bóng","Bé và bạn","Dễ");
+
+document.getElementById("ph").innerHTML=
+videoCardNoLevel("E0fYrZzm2Hk","Khám phá thiên nhiên")+
+videoCardNoLevel("umVlxnnQMic","Học tại nhà");
+
+function openVideo(id){
+modal.style.display="block";
+frame.src="https://www.youtube.com/embed/"+id;
 }
-
-topic.onchange=render;skill.onchange=render;level.onchange=render;
-render();
-
-function openVideo(id){modal.style.display='block';frame.src='https://www.youtube.com/embed/'+id}
-function closeVideo(){modal.style.display='none';frame.src=''}
+function closeVideo(){
+modal.style.display="none";
+frame.src="";
+}
 </script>
 
 <!-- FOOTER -->
@@ -156,7 +168,6 @@ function closeVideo(){modal.style.display='none';frame.src=''}
 <p>📞 0914 194 516</p>
 <a class="btn" href="tel:0914194516">Gọi điện</a>
 <a class="btn" href="https://zalo.me/0914194516">Zalo</a>
-<p>Lớp Nhà trẻ 24-36 tháng - Trường Mầm non Mỹ Hưng - tỉnh Ninh Bình</p>
 </footer>
 
 </body>
