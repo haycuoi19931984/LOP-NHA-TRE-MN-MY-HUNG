@@ -3,140 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Lớp Nhà trẻ Mỹ Hưng</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    font-family:'Fredoka',sans-serif;
-    background:#fffafc;
-}
+body{margin:0;font-family:'Fredoka',sans-serif;background:#fffafc}
 
-/* ===== HERO ===== */
-.hero{
-    position:relative;
-}
-
-.hero img{
-    width:100%;
-    height:420px;
-    object-fit:cover;
-}
-
-.hero-text{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-    color:white;
-}
-
-.hero-text h1{
-    font-size:32px;
-}
-
-/* CHỮ CHẠY */
-.hero-text p{
-    font-size:18px;
-    color:#ffd6e7;
-    animation:slideText 3s infinite alternate;
-}
-
-@keyframes slideText{
-    from{transform:translateX(-10px);}
-    to{transform:translateX(10px);}
-}
+/* ===== HERO GIỮ NGUYÊN ===== */
+.hero{position:relative}
+.hero img{width:100%;height:420px;object-fit:cover}
+.hero-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:white}
+.hero-text h1{font-size:32px}
+.hero-text p{font-size:18px;color:#ffd6e7;animation:slideText 3s infinite alternate}
+@keyframes slideText{from{transform:translateX(-10px)}to{transform:translateX(10px)}}
 
 /* ===== SECTION ===== */
-section{
-    padding:40px 20px;
-}
+section{padding:40px 20px}
+.section-title{text-align:center;color:#ff4d8d;font-size:24px}
 
-.section-title{
-    text-align:center;
-    color:#ff4d8d;
-    font-size:24px;
-}
+/* ===== FILTER ===== */
+.filter{background:white;padding:15px;border-radius:15px;margin:20px auto;max-width:900px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+select{padding:10px;border-radius:10px;margin:5px}
 
-/* GRID 4 */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-@media(max-width:1000px){
-.grid{grid-template-columns:repeat(2,1fr);}
-}
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
 
 /* CARD */
-.card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    cursor:pointer;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
+.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:0.3s}
+.card:hover{transform:scale(1.05)}
+.card img{width:100%}
+.card-title{text-align:center;color:#ff4d8d;padding:10px;background:#fff0f6}
+.card-desc{font-size:13px;padding:5px;text-align:center}
 
-.card:hover{
-    transform:scale(1.05);
-}
-
-.card img{
-    width:100%;
-}
-
-/* TITLE */
-.card-title{
-    text-align:center;
-    color:#ff4d8d;
-    padding:10px;
-    background:#fff0f6;
-}
-
-/* GAME */
-.card a{
-    text-decoration:none;
-}
+/* TAG */
+.tag{font-size:11px;padding:3px 6px;margin:2px;border-radius:6px;display:inline-block}
+.topic{background:#ffe0b2}
+.skill{background:#bbdefb}
+.level{background:#c8e6c9}
 
 /* POPUP */
-.modal{
-    display:none;
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
-}
+.modal{display:none;position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.7)}
+.modal iframe{width:80%;height:500px;margin:5% auto;display:block}
 
-.modal iframe{
-    width:80%;
-    height:500px;
-    margin:5% auto;
-    display:block;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    background:#00bfa6;
-    color:white;
-}
-
-.btn{
-    background:white;
-    color:#ff4d8d;
-    padding:10px 15px;
-    border-radius:20px;
-    margin:5px;
-    display:inline-block;
-    text-decoration:none;
-}
+/* FOOTER GIỮ NGUYÊN */
+footer{text-align:center;padding:30px;background:#00bfa6;color:white}
+.btn{background:white;color:#ff4d8d;padding:10px 15px;border-radius:20px;margin:5px;display:inline-block;text-decoration:none}
 </style>
 </head>
 
@@ -151,147 +63,36 @@ footer{
 </div>
 </div>
 
-<!-- THƠ TRUYỆN -->
+<!-- ===== NGÂN HÀNG HỌC LIỆU ===== -->
 <section>
-<div class="section-title">🌼 Thơ truyện</div>
-<p style="text-align:center;">Học liệu giúp bé phát triển ngôn ngữ</p>
+<div class="section-title">📚 Ngân hàng học liệu</div>
 
-<div class="grid">
+<div class="filter">
+<select id="topic">
+<option value="all">Chủ đề</option>
+<option value="nhanthuc">Nhận thức</option>
+<option value="ngonngu">Ngôn ngữ</option>
+<option value="kynang">Kỹ năng sống</option>
+<option value="amnhac">Âm nhạc</option>
+</select>
 
-<div class="card" onclick="openVideo('gC-z-z3rzt4')">
-<img src="https://img.youtube.com/vi/gC-z-z3rzt4/0.jpg">
-<div class="card-title">Bạn Sóc Nâu kể chuyện Mùa xuân đã về</div>
+<select id="skill">
+<option value="all">Kỹ năng</option>
+<option value="nhanthuc">Nhận thức</option>
+<option value="ngonngu">Ngôn ngữ</option>
+<option value="vandong">Vận động</option>
+<option value="xahoi">Xã hội</option>
+</select>
+
+<select id="level">
+<option value="all">Mức độ</option>
+<option value="de">Dễ</option>
+<option value="tb">Trung bình</option>
+<option value="kho">Nâng cao</option>
+</select>
 </div>
 
-<div class="card" onclick="openVideo('z13QgT3YMSM')">
-<img src="https://img.youtube.com/vi/z13QgT3YMSM/0.jpg">
-<div class="card-title">Phim hoạt hình rối bóng câu chuyện Cây táo</div>
-</div>
-
-<div class="card" onclick="openVideo('aQ3pcr39IHU')">
-<img src="https://img.youtube.com/vi/aQ3pcr39IHU/0.jpg">
-<div class="card-title">Bài thơi Cháu chào ông ạ</div>
-</div>
-
-<div class="card" onclick="openVideo('JjxHA1bwaac')">
-<img src="https://img.youtube.com/vi/JjxHA1bwaac/0.jpg">
-<div class="card-title">Bài thơ Hoa kết trái</div>
-</div>
-
-<div class="card" onclick="openVideo('6hr1xaMlRjc')">
-<img src="https://img.youtube.com/vi/6hr1xaMlRjc/0.jpg">
-<div class="card-title">Câu chuyện Quả thị</div>
-</div>
-
-</div>
-</section>
-
-<!-- CHƠI MÀ HỌC -->
-<section>
-<div class="section-title">🎨 Chơi mà học</div>
-
-<div class="grid">
-
-<div class="card" onclick="openVideo('hZ0Dvj_qV60')">
-<img src="https://img.youtube.com/vi/hZ0Dvj_qV60/0.jpg">
-<div class="card-title">Bé vẽ tia nắng mặt trời</div>
-</div>
-
-<div class="card" onclick="openVideo('lvxziuP9W-s')">
-<img src="https://img.youtube.com/vi/lvxziuP9W-s/0.jpg">
-<div class="card-title">Bé tìm hiểu về Máy bay</div>
-</div>
-
-<div class="card" onclick="openVideo('dSuUTlMml9k')">
-<img src="https://img.youtube.com/vi/dSuUTlMml9k/0.jpg">
-<div class="card-title">Thể dục sáng</div>
-</div>
-
-<div class="card" onclick="openVideo('yMhECbNn0Ts')">
-<img src="https://img.youtube.com/vi/yMhECbNn0Ts/0.jpg">
-<div class="card-title">Ném bóng trúng đích</div>
-</div>
-
-</div>
-
-<!-- TRÒ CHƠI -->
-<h3 style="text-align:center;color:#ff4d8d;">🎮 Trò chơi tương tác</h3>
-
-<div class="grid">
-
-<div class="card">
-<a href="https://www.tinytap.com/activities/g63vz/play" target="_blank">
-<img src="gauu.png">
-<div class="card-title">Ghép hình Chú gấu con ngoan</div>
-</a>
-</div>
-
-<div class="card">
-<a href="https://www.tinytap.com/activities/g63fm/play" target="_blank">
-<img src="timban.png">
-<div class="card-title">Tìm bạn lớp 2B</div>
-</a>
-</div>
-
-<div class="card">
-<a href="https://www.tinytap.com/activities/g64h4/play" target="_blank">
-<img src="cao.png">
-<div class="card-title">Câu chuyện Đôi bạn nhỏ</div>
-</a>
-</div>
-
-<div class="card">
-<a href="https://www.tinytap.com/activities/draft/?gameId=4db61bd0-1f49-11f1-a184-8d673f5bbb9d" target="_blank">
-<img src="ghep.png">
-<div class="card-title">Ghép hình</div>
-</a>
-</div>
-
-</div>
-
-</section>
-
-<!-- KỸ NĂNG -->
-<section>
-<div class="section-title">🧠 Kỹ năng sống</div>
-
-<div class="grid">
-
-<div class="card" onclick="openVideo('qA2HMDbQSVQ')">
-<img src="https://img.youtube.com/vi/qA2HMDbQSVQ/0.jpg">
-<div class="card-title">Phòng tránh đuối nước</div>
-</div>
-
-<div class="card" onclick="openVideo('kakMYtuwkPg')">
-<img src="https://img.youtube.com/vi/kakMYtuwkPg/0.jpg">
-<div class="card-title">Phép lịch sự khi ăn uống</div>
-</div>
-
-<div class="card" onclick="openVideo('fnN87XEiPG4')">
-<img src="https://img.youtube.com/vi/fnN87XEiPG4/0.jpg">
-<div class="card-title">Cách cầm cốc uống nước</div>
-</div>
-
-</div>
-</section>
-
-<!-- TUYÊN TRUYỀN TỚI PHỤ HUYNH -->
-<section>
-<div class="section-title">👨‍👩‍👧 Tuyên truyền tới Phụ huynh</div>
-
-<div class="grid">
-
-<div class="card" onclick="openVideo('B1MI60uvfZ8')">
-<img src="https://img.youtube.com/vi/B1MI60uvfZ8/0.jpg">
-<div class="card-title">Chăm sóc trẻ và dinh dưỡng phù hợp lứa tuổi</div>
-</div>
-
-<div class="card" onclick="openVideo('OhwHb0u6zeY')">
-<img src="https://img.youtube.com/vi/OhwHb0u6zeY/0.jpg">
-<div class="card-title">Phòng bệnh mùa nắng nóng</div>
-</div>
-
-</div>
+<div class="grid" id="videoList"></div>
 </section>
 
 <!-- POPUP -->
@@ -300,14 +101,53 @@ footer{
 </div>
 
 <script>
-function openVideo(id){
-document.getElementById("modal").style.display="block";
-document.getElementById("frame").src="https://www.youtube.com/embed/"+id;
+const videos=[
+{id:'qv4_7QiWDsg',title:'Nhận thức cơ bản',desc:'Nhận biết sự vật',topic:'nhanthuc',skill:'nhanthuc',level:'de'},
+{id:'LUPsqgFvnqo',title:'Màu sắc',desc:'Nhận biết màu',topic:'nhanthuc',skill:'nhanthuc',level:'de'},
+{id:'g-2vmNxl5wQ',title:'Hình dạng',desc:'Nhận biết hình học',topic:'nhanthuc',skill:'nhanthuc',level:'tb'},
+{id:'fu32XsS4elU',title:'Kỹ năng sống',desc:'Hành vi đúng',topic:'kynang',skill:'xahoi',level:'tb'},
+{id:'EqTMVMslE5Y',title:'Âm nhạc',desc:'Cảm thụ âm nhạc',topic:'amnhac',skill:'ngonngu',level:'de'},
+{id:'Oku9tPqSDjA',title:'Kể chuyện',desc:'Phát triển ngôn ngữ',topic:'ngonngu',skill:'ngonngu',level:'tb'},
+{id:'k5mIJ8TY06w',title:'Khám phá',desc:'Thế giới xung quanh',topic:'nhanthuc',skill:'nhanthuc',level:'tb'},
+{id:'z5fwPqe8mIs',title:'Kỹ năng xã hội',desc:'Tương tác',topic:'kynang',skill:'xahoi',level:'tb'},
+{id:'prr2Bxcs048',title:'Thói quen',desc:'Rèn nề nếp',topic:'kynang',skill:'xahoi',level:'de'},
+{id:'dEMpVdsU44A',title:'Tư duy',desc:'Phát triển logic',topic:'nhanthuc',skill:'nhanthuc',level:'kho'},
+{id:'o6hy1GErG2E',title:'Vận động',desc:'Phát triển thể chất',topic:'kynang',skill:'vandong',level:'tb'},
+{id:'QUcD0f0I8h0',title:'An toàn',desc:'Kỹ năng an toàn',topic:'kynang',skill:'xahoi',level:'tb'},
+{id:'E0fYrZzm2Hk',title:'Thiên nhiên',desc:'Khám phá môi trường',topic:'nhanthuc',skill:'nhanthuc',level:'de'},
+{id:'JjxHA1bwaac',title:'Bài thơ',desc:'Phát triển ngôn ngữ',topic:'ngonngu',skill:'ngonngu',level:'tb'},
+{id:'aQ3pcr39IHU',title:'Gia đình',desc:'Tình cảm gia đình',topic:'kynang',skill:'xahoi',level:'de'},
+{id:'PBsENh0uMzE',title:'Âm nhạc',desc:'Học qua bài hát',topic:'amnhac',skill:'ngonngu',level:'de'},
+{id:'umVlxnnQMic',title:'Học chủ đề',desc:'Tiếp thu kiến thức',topic:'nhanthuc',skill:'nhanthuc',level:'tb'},
+{id:'6hr1xaMlRjc',title:'Vận động tinh',desc:'Kỹ năng tay',topic:'kynang',skill:'vandong',level:'tb'},
+{id:'z13QgT3YMSM',title:'Sáng tạo',desc:'Phát triển tư duy',topic:'nhanthuc',skill:'nhanthuc',level:'kho'},
+{id:'gC-z-z3rzt4',title:'Trò chơi',desc:'Học qua chơi',topic:'kynang',skill:'xahoi',level:'de'},
+{id:'dSuUTlMml9k',title:'Trải nghiệm',desc:'Học thực hành',topic:'kynang',skill:'vandong',level:'tb'},
+{id:'yMhECbNn0Ts',title:'Hoạt động lớp',desc:'Kết nối phụ huynh',topic:'kynang',skill:'xahoi',level:'de'}
+];
+
+function render(){
+const t=topic.value,s=skill.value,l=level.value;
+videoList.innerHTML='';
+videos.filter(v=>(t==='all'||v.topic===t)&&(s==='all'||v.skill===s)&&(l==='all'||v.level===l))
+.forEach(v=>{
+videoList.innerHTML+=`<div class="card" onclick="openVideo('${v.id}')">
+<img src="https://img.youtube.com/vi/${v.id}/0.jpg">
+<div class="card-title">${v.title}</div>
+<div class="card-desc">${v.desc}</div>
+<div style="text-align:center">
+<span class="tag topic">${v.topic}</span>
+<span class="tag skill">${v.skill}</span>
+<span class="tag level">${v.level}</span>
+</div></div>`
+})
 }
-function closeVideo(){
-document.getElementById("modal").style.display="none";
-document.getElementById("frame").src="";
-}
+
+topic.onchange=render;skill.onchange=render;level.onchange=render;
+render();
+
+function openVideo(id){modal.style.display='block';frame.src='https://www.youtube.com/embed/'+id}
+function closeVideo(){modal.style.display='none';frame.src=''}
 </script>
 
 <!-- FOOTER -->
